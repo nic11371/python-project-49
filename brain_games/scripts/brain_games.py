@@ -9,7 +9,6 @@ def welcome():
 
 def main():
     welcome()
-
     welcome_user()
 
 
