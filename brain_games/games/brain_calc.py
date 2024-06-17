@@ -19,8 +19,6 @@ def random_expression():
 
 def main():
     engine.welcome_game(engine.messages["brain-calc"])
-    function_random = random_expression()
-    engine.answered_user(function_random)
     engine.finished()
 
 

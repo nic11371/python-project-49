@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import prompt
-import brain_games.games.brain_calc as random
+import brain_games.games.brain_calc as brain
+# import brain_games.games.brain_even as brain
+
 
 messages = {
     "brain-even": "Answer 'yes' if the number is even, otherwise answer 'no'.",
@@ -12,10 +14,11 @@ def welcome_game(message):
     print(message)
 
 
-def answered_user(data):
-    print(f"Question: {data[0]}")
+def answered_user():
+    expression = brain.random_expression()
+    print(f"Question: {expression[0]}")
     answer = prompt.string("Your answer: ")
-    return (answer, data[1])
+    return (answer, expression[1])
 
 
 def is_corrected():
@@ -26,7 +29,7 @@ def is_corrected():
 
 
 def finished():
-
+    try:
         count = 3
         while count > 0:
             is_flag = is_corrected()
@@ -37,8 +40,8 @@ def finished():
             count -= 1
         else:
             print("Congratulations, Bill!")
-    # except TypeError:
-    #     print("There is value 'None'. The program was finished")
+    except TypeError:
+        print("There is value 'None'. The program was finished")
 
 
 def wrong(flag):
