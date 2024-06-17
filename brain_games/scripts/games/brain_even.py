@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
-from random import random
+from random import randint
 import prompt
 
 
 def random_number():
-    return round(random() * 100)
+    number = randint(1, 100)
+    yes = 'yes'
+    no = 'no'
+    current_answer = ""
+    if number % 2 == 0:
+        current_answer = yes
+    elif number % 2 != 0:
+        current_answer = no
+    return (number, current_answer)
 
 
 def welcome():
@@ -13,17 +21,16 @@ def welcome():
 
 def answered_user():
     number = random_number()
-    print(f"Question: {number}")
+    print(f"Question: {number[0]}")
     answer = prompt.string("Your answer: ")
-    return (answer, number)
+    return (answer, number[1])
 
 
 def is_corrected():
-    answer, number = answered_user()
-    if answer == "yes":
-        return (number % 2 == 0, answer)
-    elif answer == "no":
-        return (number % 2 != 0, answer)
+    answer, even = answered_user()
+    if answer == even:
+        return (True, answer, even)
+    return (False, answer, even)
 
 
 def finished():
@@ -39,12 +46,11 @@ def finished():
         else:
             print("Congratulations, Bill!")
     except TypeError:
-        print("Entered is an incorrect symbol. The program was finished")
+        print("There is value 'None'. The program was finished")
 
 
 def wrong(flag):
-    right_ans = "no" if flag[1] == "yes" else "yes"
-    print(f"'{flag[1]}' is wrong answer ;(. Correct answer was '{right_ans}'.")
+    print(f"'{flag[1]}' is wrong answer ;(. Correct answer was '{flag[2]}'.")
     print("Let's try again, Bill!")
 
 
