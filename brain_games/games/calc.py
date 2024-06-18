@@ -1,9 +1,7 @@
-#!/usr/bin/env python3
 from random import randint, choice
-import brain_games.engine as engine
 
 
-def random_expression():
+def logic_function():
     operators = {
         "+": lambda x, y: x + y,
         "-": lambda x, y: x - y,
@@ -15,12 +13,3 @@ def random_expression():
     question = f"{number1} {operator} {number2}"
     calculation = operators[operator](number1, number2)
     return (question, calculation)
-
-
-def main():
-    engine.welcome_game(engine.messages["brain-calc"])
-    engine.finished()
-
-
-if __name__ == '__main__':
-    main()

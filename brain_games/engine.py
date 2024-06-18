@@ -1,49 +1,44 @@
-#!/usr/bin/env python3
 import prompt
-import brain_games.games.brain_calc as brain
-# import brain_games.games.brain_even as brain
 
 
 messages = {
-    "brain-even": "Answer 'yes' if the number is even, otherwise answer 'no'.",
-    "brain-calc": "What is the result of the expression?",
+    "even": "Answer 'yes' if the number is even, otherwise answer 'no'.",
+    "calc": "What is the result of the expression?",
 }
+
+
+def engine(game_module):
+    welcome_game(messages[game_module.__name__[18:]])
+    count = 3
+    while count > 0:
+        number, answer_module = game_module.logic_function()
+        answer_user, answer_module = user(number, answer_module)
+        boolean, current, correct = is_corrected(answer_user, answer_module)
+        if boolean is not True:
+            wrong(current, correct)
+            break
+        print("Correct")
+        count -= 1
+    else:
+        print("Congratulations, Bill!")
 
 
 def welcome_game(message):
     print(message)
 
 
-def answered_user():
-    expression = brain.random_expression()
-    print(f"Question: {expression[0]}")
-    answer = prompt.string("Your answer: ")
-    return (answer, expression[1])
+def user(number, answer_module):
+    print(f"Question: {number}")
+    answer_user = prompt.string("Your answer: ")
+    return (answer_user, answer_module)
 
 
-def is_corrected():
-    answer, expression = answered_user()
-    if answer == str(expression):
-        return (True, answer, expression)
-    return (False, answer, expression)
+def is_corrected(answer_user, answer_module):
+    if answer_user == str(answer_module):
+        return (True, answer_user, answer_module)
+    return (False, answer_user, answer_module)
 
 
-def finished():
-    try:
-        count = 3
-        while count > 0:
-            is_flag = is_corrected()
-            if is_flag[0] is not True:
-                wrong(is_flag)
-                break
-            print("Correct")
-            count -= 1
-        else:
-            print("Congratulations, Bill!")
-    except TypeError:
-        print("There is value 'None'. The program was finished")
-
-
-def wrong(flag):
-    print(f"'{flag[1]}' is wrong answer ;(. Correct answer was '{flag[2]}'.")
+def wrong(current, correct):
+    print(f"'{current}' is wrong answer ;(. Correct answer was '{correct}'.")
     print("Let's try again, Bill!")
