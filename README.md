@@ -5,3 +5,4 @@
 https://semver.org/lang/ru/
 <a href="https://asciinema.org/a/664540" target="_blank"><img src="https://asciinema.org/a/664540.svg" /></a>
 <a href="https://asciinema.org/a/664559" target="_blank"><img src="https://asciinema.org/a/664559.svg" /></a>
+<a href="https://asciinema.org/a/664588" target="_blank"><img src="https://asciinema.org/a/664588.svg" /></a>
