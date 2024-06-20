@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
-
-from brain_games.cli import welcome_user
-
-
-def welcome():
-    print("Welcome to the Brain Games!")
+import brain_games.cli as cli
 
 
 def main():
-    welcome()
-    welcome_user()
+    cli.welcome()
+    cli.welcome_user()
 
 
 if __name__ == '__main__':

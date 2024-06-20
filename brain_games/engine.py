@@ -1,4 +1,5 @@
 import prompt
+import brain_games.cli as cli
 
 
 messages = {
@@ -10,6 +11,8 @@ messages = {
 
 
 def engine(game_module):
+    cli.welcome()
+    name_user = cli.welcome_user()
     welcome_game(messages[game_module.__name__[18:]])
     count = 3
     while count > 0:
@@ -17,12 +20,12 @@ def engine(game_module):
         answer_user, answer_module = user(number, answer_module)
         boolean, current, correct = is_corrected(answer_user, answer_module)
         if boolean is not True:
-            wrong(current, correct)
+            wrong(current, correct, name_user)
             break
         print("Correct")
         count -= 1
     else:
-        print("Congratulations, Bill!")
+        print(f"Congratulations, {name_user}!")
 
 
 def welcome_game(message):
@@ -41,6 +44,6 @@ def is_corrected(answer_user, answer_module):
     return (False, answer_user, answer_module)
 
 
-def wrong(current, correct):
+def wrong(current, correct, name_user):
     print(f"'{current}' is wrong answer ;(. Correct answer was '{correct}'.")
-    print("Let's try again, Bill!")
+    print(f"Let's try again, {name_user}!")
