@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
-authors = ["Nikolay Melnikov"]
+description = "This project 'Brain games'. There is some games on the logic."
+authors = ["Nic11371 <nic11371@gmail.com>"]
 license = "Nikolay Melnikov"
 readme = "README.md"
 packages = [
@@ -16,13 +16,13 @@ prompt = "^0.4.1"
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
 brain-even = "brain_games.scripts.brain_even:main"
-brain-calculate = "brain_games.scripts.brain_calc:main"
+brain-calc = "brain_games.scripts.brain_calc:main"
 brain-gcd = "brain_games.scripts.brain_gcd:main"
+brain-prime = "brain_games.scripts.brain_prime:main"
 brain-progression = "brain_games.scripts.brain_progression:main"
 
-
 [tool.poetry.group.dev.dependencies]
-flake8 = "^7.0.0"
+flake8 = "^7.1.0"
 
 [build-system]
 requires = ["poetry-core"]
