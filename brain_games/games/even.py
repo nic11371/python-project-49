@@ -1,6 +1,9 @@
 from random import randint
 
 
+RULE = "Answer \"yes\" if the number is even, otherwise answer \"no\"."
+
+
 def logic_function():
     number = randint(1, 100)
     current_answer = ""

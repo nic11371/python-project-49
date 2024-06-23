@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-import brain_games.engine as engine
-import brain_games.games.gcd as gcd
+from brain_games.engine import engine
+from brain_games.games.gcd import logic_function, RULE
 
 
 def main():
-    engine.engine(gcd)
+    engine(logic_function, RULE)
 
 
 if __name__ == '__main__':

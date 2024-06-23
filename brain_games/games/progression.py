@@ -1,6 +1,9 @@
 from random import randint, choice
 
 
+RULE = "What number is missing in the progression?"
+
+
 def logic_function():
     sequence = []
     start = randint(0, 10)

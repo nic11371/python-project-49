@@ -1,6 +1,9 @@
 from random import randint
 
 
+RULE = "Find the greatest common divisor of given numbers."
+
+
 def logic_function():
     number1 = randint(1, 100)
     number2 = randint(1, 100)

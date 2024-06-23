@@ -1,23 +1,14 @@
-import prompt
-import brain_games.cli as cli
+from prompt import string
+from brain_games.cli import welcome, welcome_user
 
 
-messages = {
-    "even": "Answer \"yes\" if the number is even, otherwise answer \"no\".",
-    "calc": "What is the result of the expression?",
-    "gcd": "Find the greatest common divisor of given numbers.",
-    "progression": "What number is missing in the progression?",
-    "prime": "Answer \"yes\" if given number is prime. Otherwise answer \"no\"."
-}
-
-
-def engine(game_module):
-    cli.welcome()
-    name_user = cli.welcome_user()
-    welcome_game(messages[game_module.__name__[18:]])
+def engine(game_module, rules):
+    welcome()
+    name_user = welcome_user()
+    welcome_game(rules)
     count = 3
     while count > 0:
-        number, answer_module = game_module.logic_function()
+        number, answer_module = game_module()
         answer_user, answer_module = user(number, answer_module)
         boolean, current, correct = is_corrected(answer_user, answer_module)
         if boolean is not True:
@@ -35,7 +26,7 @@ def welcome_game(message):
 
 def user(number, answer_module):
     print(f"Question: {number}")
-    answer_user = prompt.string("Your answer: ")
+    answer_user = string("Your answer: ")
     return (answer_user, answer_module)
 
 

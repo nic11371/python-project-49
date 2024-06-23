@@ -1,6 +1,9 @@
 from random import randint, choice
 
 
+RULE = "What is the result of the expression?"
+
+
 def logic_function():
     operators = {
         "+": lambda x, y: x + y,

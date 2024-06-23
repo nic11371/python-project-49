@@ -1,6 +1,9 @@
 from random import randint
 
 
+RULE = "Answer \"yes\" if given number is prime. Otherwise answer \"no\"."
+
+
 def logic_function():
     number = randint(1, 100)
     k = 0
