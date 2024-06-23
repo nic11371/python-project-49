@@ -11,7 +11,8 @@ def logic_function():
         sequence.append(value)
         start = value
     hidden_number = choice(sequence)
+    for index, value in enumerate(sequence):
+        if value == hidden_number:
+            sequence[index] = ".."
     question = " ".join(str(x) for x in sequence)
-    if hidden_number in sequence:
-        question = question.replace(str(hidden_number), "..")
     return question, hidden_number
