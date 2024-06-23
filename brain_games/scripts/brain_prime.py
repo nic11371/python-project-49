@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 from brain_games.engine import engine
-from brain_games.games.prime import logic_function, RULE
+from brain_games.games.prime import checked_prime, RULE
 
 
 def main():
-    engine(logic_function, RULE)
+    engine(checked_prime, RULE)
 
 
 if __name__ == '__main__':

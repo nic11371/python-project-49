@@ -4,7 +4,7 @@ from random import randint, choice
 RULE = "What is the result of the expression?"
 
 
-def logic_function():
+def do_calculate():
     operators = {
         "+": lambda x, y: x + y,
         "-": lambda x, y: x - y,

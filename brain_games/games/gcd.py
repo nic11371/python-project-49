@@ -4,7 +4,7 @@ from random import randint
 RULE = "Find the greatest common divisor of given numbers."
 
 
-def logic_function():
+def found_divide():
     number1 = randint(1, 100)
     number2 = randint(1, 100)
     question = f"{number1} {number2}"
