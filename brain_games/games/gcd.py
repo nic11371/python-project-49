@@ -10,4 +10,4 @@ def logic_function():
         if ((number1 % i == 0) and (number2 % i == 0)):
             gcd = i
     calculation = gcd
-    return (question, calculation)
+    return question, calculation

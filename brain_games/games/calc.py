@@ -12,4 +12,4 @@ def logic_function():
     operator = choice(list(operators.keys()))
     question = f"{number1} {operator} {number2}"
     calculation = operators[operator](number1, number2)
-    return (question, calculation)
+    return question, calculation

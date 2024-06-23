@@ -11,4 +11,4 @@ def logic_function():
         current_answer = "yes"
     else:
         current_answer = "no"
-    return (number, current_answer)
+    return number, current_answer

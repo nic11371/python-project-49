@@ -10,8 +10,7 @@ def logic_function():
         value = start + step
         sequence.append(value)
         start = value
-    question = " ".join(str(x) for x in sequence)
     hidden_number = choice(sequence)
-    if str(hidden_number) in question:
+    if hidden_number in sequence:
         question = question.replace(str(hidden_number), "..")
-    return (question, hidden_number)
+    return question, hidden_number
