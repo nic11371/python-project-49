@@ -12,7 +12,8 @@ def engine(game_module, rules):
         print(f"Question: {current_value}")
         answer_user = string("Your answer: ")
         if answer_user != str(correct_value):
-            print(f"'{answer_user}' is wrong answer ;(. Correct answer was '{correct_value}'.")
+            print(f'''
+"{answer_user}" is wrong answer ;(.Correct answer was "{correct_value}".''')
             print(f"Let's try again, {name_user}!")
             break
         print("Correct")
