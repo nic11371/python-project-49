@@ -10,11 +10,11 @@ def engine(game_module):
     print(game_module.RULE)
     current_round = 0
     while current_round < MAX_ROUND:
-        current_value, correct_value = game_module.make_logic()
+        current_value, right = game_module.make_logic()
         print(f"Question: {current_value}")
-        answer_user = string("Your answer: ")
-        if answer_user != str(correct_value):
-            print(f"'{answer_user}' is wrong answer ;(.Correct answer was '{correct_value}'.")
+        answer = string("Your answer: ")
+        if answer != str(right):
+            print(f"'{answer}' is wrong answer ;(.Correct answer was '{right}'.")
             print(f"Let's try again, {name_user}!")
             return
         print("Correct")

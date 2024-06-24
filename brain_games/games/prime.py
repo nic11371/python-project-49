@@ -12,8 +12,5 @@ def make_logic():
     for i in range(2, int(number // 2) + 1):
         if number % i == 0:
             k += 1
-    if k <= 0:
-        current_answer = "yes"
-    else:
-        current_answer = "no"
+    current_answer = "yes" if k <= 0 else "no"
     return number, current_answer
