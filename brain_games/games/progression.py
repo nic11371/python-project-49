@@ -4,7 +4,7 @@ from random import randint, choice
 RULE = "What number is missing in the progression?"
 
 
-def make_progression():
+def make_logic():
     sequence = []
     start = randint(0, 10)
     stop = randint(5, 10)

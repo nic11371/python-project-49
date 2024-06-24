@@ -4,7 +4,7 @@ from random import randint
 RULE = "Answer \"yes\" if given number is prime. Otherwise answer \"no\"."
 
 
-def checked_prime():
+def make_logic():
     number = randint(1, 100)
     k = 0
     for i in range(2, int(number // 2) + 1):

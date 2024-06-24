@@ -1,16 +1,13 @@
 from random import randint
+from math import gcd
 
 
 RULE = "Find the greatest common divisor of given numbers."
 
 
-def found_divide():
+def make_logic():
     number1 = randint(1, 100)
     number2 = randint(1, 100)
     question = f"{number1} {number2}"
-    tmp = number2 if number1 > number2 else number1
-    for i in range(1, tmp + 1):
-        if ((number1 % i == 0) and (number2 % i == 0)):
-            gcd = i
-    calculation = gcd
+    calculation = gcd(number1, number2)
     return question, calculation

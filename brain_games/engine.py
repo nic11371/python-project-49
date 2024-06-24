@@ -1,22 +1,19 @@
 from prompt import string
-from brain_games.cli import welcome, welcome_user
+from brain_games.cli import welcome
 
 
-def engine(game_module, rules):
-    welcome()
-    name_user = welcome_user()
-    print(rules)
+def engine(game_module):
+    name_user = welcome()
+    print(game_module.RULE)
     count = 3
     while count > 0:
-        current_value, correct_value = game_module()
+        current_value, corr = game_module.make_logic()
         print(f"Question: {current_value}")
-        answer_user = string("Your answer: ")
-        if answer_user != str(correct_value):
-            print(f'''
-"{answer_user}" is wrong answer ;(.Correct answer was "{correct_value}".''')
+        answer = string("Your answer: ")
+        if answer != str(corr):
+            print(f"'{answer}' is wrong answer ;(.Correct answer was '{corr}'.")
             print(f"Let's try again, {name_user}!")
-            break
+            return
         print("Correct")
         count -= 1
-    else:
-        print(f"Congratulations, {name_user}!")
+    print(f"Congratulations, {name_user}!")
