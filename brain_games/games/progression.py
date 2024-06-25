@@ -13,9 +13,9 @@ def make_logic():
         value = start + step
         sequence.append(value)
         start = value
-    hidden_number = choice(sequence)
+    calculation_value = choice(sequence)
     for index, value in enumerate(sequence):
-        if value == hidden_number:
+        if value == calculation_value:
             sequence[index] = ".."
-    question = " ".join(str(x) for x in sequence)
-    return question, hidden_number
+    question_expression = " ".join(str(x) for x in sequence)
+    return question_expression, calculation_value

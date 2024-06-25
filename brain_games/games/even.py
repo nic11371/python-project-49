@@ -5,6 +5,6 @@ RULE = "Answer \"yes\" if the number is even, otherwise answer \"no\"."
 
 
 def make_logic():
-    number = randint(1, 100)
-    current_answer = 'yes' if number % 2 == 0 else 'no'
-    return number, current_answer
+    question_expression = randint(1, 100)
+    calculation_value = 'yes' if question_expression % 2 == 0 else 'no'
+    return question_expression, calculation_value
