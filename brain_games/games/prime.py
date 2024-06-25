@@ -15,6 +15,6 @@ def is_prime(number):
 
 
 def make_logic():
-    question_expression = randint(1, 100)
-    calculation_value = is_prime(question_expression)
-    return question_expression, calculation_value
+    question_user = randint(1, 100)
+    correct_answer = is_prime(question_user)
+    return question_user, correct_answer
